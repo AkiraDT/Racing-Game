@@ -1,0 +1,300 @@
+fileFormatVersion: 2
+guid: b10a81f643dcb7145a0826a55458de7f
+timeCreated: 1479121101
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Drone_Racing
+    100004: Drone_Rig01
+    100006: Object001.001
+    100008: Object001.002
+    100010: Object001.003
+    100012: Object001.004
+    100014: Object001.005
+    100016: Object006
+    100018: Object016
+    100020: Object020
+    100022: Object021
+    100024: Object022
+    400000: //RootNode
+    400002: Drone_Racing
+    400004: Drone_Rig01
+    400006: Object001.001
+    400008: Object001.002
+    400010: Object001.003
+    400012: Object001.004
+    400014: Object001.005
+    400016: Object006
+    400018: Object016
+    400020: Object020
+    400022: Object021
+    400024: Object022
+    2300000: Object001.001
+    2300002: Object001.002
+    2300004: Object001.003
+    2300006: Object001.004
+    2300008: Object001.005
+    2300010: Object006
+    2300012: Object016
+    2300014: Object020
+    2300016: Object021
+    2300018: Object022
+    3300000: Object001.001
+    3300002: Object001.002
+    3300004: Object001.003
+    3300006: Object001.004
+    3300008: Object001.005
+    3300010: Object006
+    3300012: Object016
+    3300014: Object020
+    3300016: Object021
+    3300018: Object022
+    4300000: Object001.001
+    4300002: Object006
+    4300004: Object001.003
+    4300006: Object001.004
+    4300008: Object001.005
+    4300010: Object001.002
+    4300012: Object016
+    4300014: Object022
+    4300016: Object021
+    4300018: Object020
+    7400000: Take 001
+    7400002: Idle
+    7400004: fall
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 190
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Drone_Racing
+        weight: 1
+      - path: Drone_Racing/Object001.001
+        weight: 1
+      - path: Drone_Rig01
+        weight: 1
+      - path: Drone_Rig01/Object006
+        weight: 1
+      - path: Drone_Rig01/Object006/Object001.002
+        weight: 1
+      - path: Drone_Rig01/Object006/Object001.003
+        weight: 1
+      - path: Drone_Rig01/Object006/Object001.004
+        weight: 1
+      - path: Drone_Rig01/Object006/Object001.005
+        weight: 1
+      - path: Drone_Rig01/Object006/Object016
+        weight: 1
+      - path: Drone_Rig01/Object006/Object020
+        weight: 1
+      - path: Drone_Rig01/Object006/Object021
+        weight: 1
+      - path: Drone_Rig01/Object006/Object022
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 10
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0
+        functionName: GroundCheck
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Drone_Racing
+        weight: 1
+      - path: Drone_Racing/Object001.001
+        weight: 1
+      - path: Drone_Rig01
+        weight: 1
+      - path: Drone_Rig01/Object006
+        weight: 1
+      - path: Drone_Rig01/Object006/Object001.002
+        weight: 1
+      - path: Drone_Rig01/Object006/Object001.003
+        weight: 1
+      - path: Drone_Rig01/Object006/Object001.004
+        weight: 1
+      - path: Drone_Rig01/Object006/Object001.005
+        weight: 1
+      - path: Drone_Rig01/Object006/Object016
+        weight: 1
+      - path: Drone_Rig01/Object006/Object020
+        weight: 1
+      - path: Drone_Rig01/Object006/Object021
+        weight: 1
+      - path: Drone_Rig01/Object006/Object022
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: fall
+      takeName: Take 001
+      firstFrame: 10
+      lastFrame: 90
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Drone_Racing
+        weight: 1
+      - path: Drone_Racing/Object001.001
+        weight: 1
+      - path: Drone_Rig01
+        weight: 1
+      - path: Drone_Rig01/Object006
+        weight: 1
+      - path: Drone_Rig01/Object006/Object001.002
+        weight: 1
+      - path: Drone_Rig01/Object006/Object001.003
+        weight: 1
+      - path: Drone_Rig01/Object006/Object001.004
+        weight: 1
+      - path: Drone_Rig01/Object006/Object001.005
+        weight: 1
+      - path: Drone_Rig01/Object006/Object016
+        weight: 1
+      - path: Drone_Rig01/Object006/Object020
+        weight: 1
+      - path: Drone_Rig01/Object006/Object021
+        weight: 1
+      - path: Drone_Rig01/Object006/Object022
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
