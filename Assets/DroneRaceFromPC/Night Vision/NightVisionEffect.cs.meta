@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b592f41dc3aad7d418eaa98f253ef21b
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - nightVisionShader: {instanceID: 0}
+  - vignetteTexture: {instanceID: 0}
+  - scanLineTexture: {instanceID: 0}
+  - nightVisionNoise: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

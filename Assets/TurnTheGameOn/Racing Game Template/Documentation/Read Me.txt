@@ -1,0 +1,93 @@
+Racing Game Template
+Contact: turnthegameon@gmail.com
+	
+YouTube Tutorials: https://www.youtube.com/playlist?list=PLy0oHZ9DiHn81rri8OBJ0CNd4HFrVjq-L
+
+Please load the garage scene once to generate player data before trying to directly load any other scene.
+
+To enable multiplayer services for your project select Window/Services, then select multiplayer and click the link to go to dashboard. This will take you to a Unity web page to configure multiplayer services for your project.
+
+Select "Window/RGT Settings" to open the "Racing Game Template Project Editor Window", many common project settings can be chamged here.
+
+Making new races involves duplicating a race scene and setting up a new way-point path for the new track.
+
+Preconfigured scenes have been added for you to customize by editing the environment and waypoints to create your own racing game.
+
+Follow the video overviews which provides insight into how the project works.
+
+To customize the cars, look through the vehicle prefab structure to see which components and objects make up the prefabs, then replace the models on the prefabs and assign your new materials where the previous car models materials are assigned. The "Racing Game Template Project Editor" must also be updated to reference the new material for each car model. The wheel coliders and car control scripts will also need to be adjusted to match your new car model needs.
+
+Projet settings and detais:
+
+/////
+-Build Settings
+The Garage Scene should be scene 0 unless you want to make a splash screen or main menu scene that is loaded before scene 0.
+When adding more races to your build settings ensure each race starts with a number prefix indicating the race number. Example:
+0Race 0 Name
+1Race 1 Name
+2Race 2 Name
+.
+.
+10Race 10 Name
+
+/////
+-Races
+-Configure Race Size: Enable this option to adjust the number of races in the template.
+- < and > Buttons: Navagite through the settings for each race.
+- Race Name: Sets the race name that will be displayed and loaded from the build settings when the race is selected by the player. Follow the prefix requirements outlined in the build settings section when naming your scene files.
+- Race Locked: This is a basic lock system that will be extended in a future update, if you want to extend it and are an experienced with Unity scripting reference the code in the menu and set PlayerPrefs to controls it.
+- Unlock Amount:	The amount required to unlock the race if "Purchase Level Unlock" is turned on.
+- First, Second and Third Prize: Currency is reward to the player if the player finishes a race in 1st, 2nd or 3rd place.
+- Lap Limit: Sets the lap limit for the race system.
+- Purchase Level Unlock: Turn On/Off the ability to allow the player to unlock races with currency.
+- Auto Unlock Next Race: Turn On/Off the ability to auto unlock the next race when a race is completed.
+- Lock Button Text: Button text used when a race is locked.
+
+/////
+-Cars
+- Configure Car Size: Enable this option to adjust the number of player cars in the template.
+- < and > Buttons: Navagite through the settings for each car.
+- Vehicle Name: Sets the name for the car to be displayed in the garage menu.
+- Vehicle Price: Sets the car purchase price.
+- Car Unlocked: When the player buys a car it becomes unlocked, you can set the car to unlocked by default to let the player have access to the car for free. This data is saved using PlayerPrefs.
+- Vehicle Prefab: A reference to the vehicle prefab assigned to this vehicle slot.
+- Car Material: A reference to this cars prefab material.
+- Car Glow Light: A reference to this cars prefab glow light (particle system).
+- Scene Car Glow Light: A reference to the preview car glow light particle that is used in the garage scene.
+- Scene car Model: A reference to the car model that is used in the garage scene. SetActive(true) is called on this object when the player selects the car from the vehicle select menu.
+- Starting Currency: Sets the starting currency for the player.
+- Paint Price: Sets the price to change paint color for the player.
+- Glow Price: Sets the price to change glow light color for the player.
+
+///////////// Race Scene
+///
+Data is loaded into this scene from the garage scene through scriptable objects and plarprefs settings.
+
+\\Waypoints - Waypoints are used by the players arrow waypointer, AI vehicles, and position system. Waypoints must be configured throughout the track to ensure proper position tracking and AI movement.
+
+- Configure Mode: This is a lock that only allows waypoints to be automatically adjusted based on current settings when turned on. The waypoint system is very powerful but easy to misuse if not properly understood. Always save your scene before adjusting this setting as it will delete objects and manager references. When you need to reduce the total waypoint size you should turn off configure mode, adjust total waypoints value, then turn on configure mode to have the inspector auto update and assign new values to the waypoints, then click the cleanup old waypoints button to remove and organize any points not accounted for from your scene.
+
+- Total Waypoints: Automatically adds/removes/adjust waypoints in the scene to be used for position tracking, Ai and the player arrow waypointer.
+
+\\Settings
+- Ready Time: Set the amount of timer will count down before the race begins.
+
+- Spawn Points: A reference to each vehicles spawn point. Tip you can move these to any position/rotation in the scene you want.
+
+\\Info
+- Manager Reference: A reference to all prefabs and components used by the race scene.
+
+
+/////////////Open World Scene
+This is a simple open world scene that loads the players currently selected vehicle to test drive.
+
+
+
+/////////////CARS
+To add new car models you need to replace the models in the car prefabs with your own, this really as easy as just replacing the models, adjusting the colliders on the prefab, including the wheel colliders to make sure everything is scaled properly. While you’re at it you can adjust each vehicles inspector settings to tweak the performance of the cars; many variables are exposed in the inspector, spend some time playing with the settings and tweak your cars to perfection.
+
+
+/////////////RACES
+To add new races to the kit you must create the new tracks, adjust the Racing Game Template Project Editor, configure the new race scenes and add the scenes to your build settings. 
+
+In your race scenes, adjust your waypoints and starting points in the scene. Use the Race Manager to set the amount of waypoints you require for your track and position them along your course, test drive your course to ensure waypoint placements are as optimal as they can be. Follow the advice outlined in the documentation above or use the video tutorial for a visual overview of this process.
