@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/TurnTheGameOn/Racing Game Template/Scenes/0BeachTest.unity
     guid: f21c94d7f833f1640853e0be070b8b6f
-  - enabled: 0
+  - enabled: 1
     path: Assets/TurnTheGameOn/Racing Game Template/Scenes/1Mountain Lake.unity
     guid: 32c44997a9600fb4d8e2b5a6c486b7b4
   - enabled: 0

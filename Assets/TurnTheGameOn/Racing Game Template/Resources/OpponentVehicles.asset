@@ -77,12 +77,12 @@ MonoBehaviour:
   - 4f5050203633
   vehicles:
   - {fileID: 180352, guid: 2dec72818da4cd64eb2915da7fe66dc9, type: 2}
-  - {fileID: 180352, guid: 6a72fa71e55835d42ba11e80923b9e65, type: 2}
-  - {fileID: 180352, guid: 4ed058b1df07fa540b75a529935ee0d7, type: 2}
-  - {fileID: 180352, guid: 48271dd2fa298cd47aab0c37fabecd28, type: 2}
-  - {fileID: 180352, guid: bb3a9e47789f31841be238e66ac9d12a, type: 2}
-  - {fileID: 180352, guid: 90dc132315a5a6c49a8df5938413eac8, type: 2}
-  - {fileID: 180352, guid: 24f3f2a1e3863c64b806f538dae88bd9, type: 2}
+  - {fileID: 180352, guid: 52176c8f8e864fa45951911970afff2a, type: 2}
+  - {fileID: 180352, guid: 6b5f35ba22eddfa45b18eabc3316b4d2, type: 2}
+  - {fileID: 180352, guid: 38a01d67d83b1f349a6dab0979e9cf48, type: 2}
+  - {fileID: 180352, guid: f543b687eba5a204b9e9c7565e914181, type: 2}
+  - {fileID: 180352, guid: d4a42144f9fb6b546bc766d290206e2c, type: 2}
+  - {fileID: 180352, guid: 4f83343abfd29c3419ee4f6f1b51fa45, type: 2}
   - {fileID: 180352, guid: 24f3f2a1e3863c64b806f538dae88bd9, type: 2}
   - {fileID: 180352, guid: 24f3f2a1e3863c64b806f538dae88bd9, type: 2}
   - {fileID: 180352, guid: 24f3f2a1e3863c64b806f538dae88bd9, type: 2}

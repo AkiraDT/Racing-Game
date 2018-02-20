@@ -157,7 +157,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &104138
 GameObject:
   m_ObjectHideFlags: 0
@@ -773,7 +773,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &123196
 GameObject:
   m_ObjectHideFlags: 1
@@ -1797,7 +1797,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &163204
 GameObject:
   m_ObjectHideFlags: 1
@@ -3164,8 +3164,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 103858}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0.6362997}
-  m_LocalScale: {x: 1.5150001, y: 1.4139999, z: 1.414}
+  m_LocalPosition: {x: 0, y: 1.09, z: 0}
+  m_LocalScale: {x: 0.55, y: 0.52, z: 0.37}
   m_Children: []
   m_Father: {fileID: 499616}
   m_RootOrder: 2
@@ -7071,12 +7071,12 @@ MeshCollider:
   m_GameObject: {fileID: 103858}
   m_Material: {fileID: 13400000, guid: a49af0279e864fd43a7e336cd513bbad, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 1
   m_CookingOptions: 14
   m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: c16f5dcf3ee1639428c2eb0a533d8d98, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 2281987c8b9626b4dbfe07a51bf327b5, type: 3}
 --- !u!65 &6524722
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -7097,10 +7097,10 @@ BoxCollider:
   m_GameObject: {fileID: 103858}
   m_Material: {fileID: 13400000, guid: a49af0279e864fd43a7e336cd513bbad, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.61, y: 3.9, z: 0.72}
-  m_Center: {x: 0, y: 0.58346856, z: 0.57}
+  m_Size: {x: 1.5, y: 2, z: 0.7}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!81 &8154068
 AudioListener:
   m_ObjectHideFlags: 1
@@ -12825,7 +12825,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 0
+  randomSeed: 660246406
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -23739,7 +23739,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1106382746333830}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4765616966048820}
