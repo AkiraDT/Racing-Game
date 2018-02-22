@@ -23,11 +23,11 @@ MonoBehaviour:
   upgradeBrakesPrice: 20000
   upgradeTiresPrice: 30000
   upgradeSteeringPrice: 40000
-  currentVehicleNumber: 2
+  currentVehicleNumber: 0
   numberOfCars: 2
   playerName: Player
   vehicles:
-  - {fileID: 198844, guid: 7f7518a8a0b68e442a7f8e3852feb7c7, type: 2}
+  - {fileID: 198844, guid: 5df9cab3cb7c99b40afeccf03e142680, type: 2}
   - {fileID: 198844, guid: 1c5f34fdbeaec104ab7257c5ee3489a1, type: 2}
   vehicleNames:
   - Drone 1

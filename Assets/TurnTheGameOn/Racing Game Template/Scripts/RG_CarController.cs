@@ -189,7 +189,7 @@ public class RG_CarController : MonoBehaviour
 		{
 			m_WheelMeshLocalRotations[i] = m_WheelMeshes[i].transform.localRotation;
 		}
-		m_WheelColliders[0].attachedRigidbody.centerOfMass = m_CentreOfMassOffset;
+		//m_WheelColliders[0].attachedRigidbody.centerOfMass = m_CentreOfMassOffset;
 
 		m_MaxHandbrakeTorque = float.MaxValue;
 
@@ -458,8 +458,8 @@ public class RG_CarController : MonoBehaviour
 	// this is used to add more grip in relation to speed
 	private void AddDownForce()
 	{
-		m_WheelColliders[0].attachedRigidbody.AddForce(-transform.up*m_Downforce*
-			m_WheelColliders[0].attachedRigidbody.velocity.magnitude);
+		//m_WheelColliders[0].attachedRigidbody.AddForce(-transform.up*m_Downforce*
+		//	m_WheelColliders[0].attachedRigidbody.velocity.magnitude);
 	}
 
 
