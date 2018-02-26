@@ -30,7 +30,7 @@ MonoBehaviour:
   - {fileID: 198844, guid: 5df9cab3cb7c99b40afeccf03e142680, type: 2}
   - {fileID: 198844, guid: 1c5f34fdbeaec104ab7257c5ee3489a1, type: 2}
   vehicleNames:
-  - Drone 1
+  - Drone_Racing1
   - Car2
   price: 00000000c8af0000
   carMaterial:

@@ -68,7 +68,6 @@ namespace TurnTheGameOn.RacingGameTemplate.CrossPlatformInput.PlatformSpecific{
                         nitroFX.SetActive (false);
 				}
 			}
-			print (time);
 		}
 
 		public void nitroGo(){
