@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class RacingManager : MonoBehaviour {
 
-    public Checkpoint[] checkpointChecker;
+	public checkpoint[] checkpointChecker;
     public bool[,] passedData;
     public int currentCheckpoint;
     public int totalCheckpoint;
@@ -20,7 +20,7 @@ public class RacingManager : MonoBehaviour {
             
         Transform _transform = GetComponent<Transform>();
         totalCheckpoint = _transform.childCount;
-        checkpointChecker = new Checkpoint[totalCheckpoint];
+        checkpointChecker = new checkpoint[totalCheckpoint];
 
         //create 2 dimension array for storing passed data checkpoint from
         //player 1 and 2
@@ -28,8 +28,8 @@ public class RacingManager : MonoBehaviour {
 
         for (int i=0;i<totalCheckpoint; i++)
         {
-            checkpointChecker[i] = _transform.GetChild(i).GetComponent<Checkpoint>();
-            checkpointChecker[i].Reset();
+            checkpointChecker[i] = _transform.GetChild(i).GetComponent<checkpoint>();
+            //checkpointChecker[i];
         }
     }
 
@@ -52,7 +52,7 @@ public class RacingManager : MonoBehaviour {
         currentCheckpoint = 0;
         for(int i=0;i<totalCheckpoint;i++)
         {
-            checkpointChecker[i].Reset();
+           // checkpointChecker[i];
         }
         passedData = new bool[totalPlayer, totalCheckpoint];
     }

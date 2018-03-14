@@ -6,7 +6,6 @@ public class DroneMovementScript: MonoBehaviour{
 	public  Animator animatedGameObject;
 	public bool mobile_turned_on = false;
 	public bool joystick_turned_on = false;
-    public bool rcRemoteTurnedOn = false;
 	Rigidbody ourDrone;
 	AudioSource droneSound;
 	CameraScript camScript;
@@ -41,6 +40,7 @@ public class DroneMovementScript: MonoBehaviour{
 		MovementForward();
 		DroneSound();
 
+		/*
 		if(joystick_turned_on == false){
 			Input_Mobile_Sensitvity_Calculation();
 		}
@@ -51,19 +51,20 @@ public class DroneMovementScript: MonoBehaviour{
 		if(mobile_turned_on == true){
 			TouchCalculations();
 			CheckingIfInside();
-		}
+		}*/
 	
 
 		ourDrone.AddRelativeForce(Vector3.up * upForce);
 
 		ourDrone.rotation = Quaternion.Euler(
-			new Vector3(0, currentYRotation, 0)
-			);
-
-		
-		droneObject.rotation = Quaternion.Euler(
+			//new Vector3(0, currentYRotation, 0)
 			new Vector3(tiltAmountForward, currentYRotation, tiltAmountSideways)
 		);
+
+		/*
+		droneObject.rotation = Quaternion.Euler(
+			new Vector3(tiltAmountForward, currentYRotation, tiltAmountSideways)
+		);*/
 	}
 
 	void RotationUpdateLoop_TrickRotation(){
@@ -126,17 +127,18 @@ public class DroneMovementScript: MonoBehaviour{
 			A = (Input.GetKey(KeyCode.J)) ? true : false;
 			S = (Input.GetKey(KeyCode.K)) ? true : false;
 			D = (Input.GetKey(KeyCode.L)) ? true : false;
-		}else if (mobile_turned_on == false && joystick_turned_on == true){
-			W = (Input.GetAxisRaw(right_analog_y) > 0) ? true : false;
-			S = (Input.GetAxisRaw(right_analog_y) < 0) ? true : false;
+		}
+		if(mobile_turned_on == false && joystick_turned_on == true){
+			W = (Input.GetAxisRaw(left_analog_y) > 0) ? true : false;
+			S = (Input.GetAxisRaw(left_analog_y) < 0) ? true : false;
 
-			D = (Input.GetAxisRaw(right_analog_x) > 0) ? true : false;
-			A = (Input.GetAxisRaw(right_analog_x) < 0) ? true : false;
+			D = (Input.GetAxisRaw(left_analog_x) > 0) ? true : false;
+			A = (Input.GetAxisRaw(left_analog_x) < 0) ? true : false;
 
 			/*K = (Input.GetKey(downButton)) ? true : false;
 			I = (Input.GetKey(upButton)) ? true : false;*/
 
-			Z = (Input.GetAxisRaw(left_analog_y));
+			Z = (Input.GetAxisRaw(right_analog_y));
 			X = (Input.GetAxisRaw (turbo) > 0)? true : false;
 			//!X = (Input.GetAxisRaw (turbo) < 0)? true : false;
 		}
@@ -176,7 +178,22 @@ public class DroneMovementScript: MonoBehaviour{
 	[Header("Drone slowdown")]
 	[Range(0.0f,2.0f)]
 	public float slowDownTime = 0.95f;
+
 	private void ClampingSpeedValues(){
+		if(Mathf.Abs(Input.GetAxis("Throttle")) > 0.2f && Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2f){
+			ourDrone.velocity = Vector3.ClampMagnitude(ourDrone.velocity, Mathf.Lerp(ourDrone.velocity.magnitude, maxForwardSpeed, Time.deltaTime * 5f));
+		}
+		if(Mathf.Abs(Input.GetAxis("Throttle")) > 0.2f && Mathf.Abs(Input.GetAxis("Horizontal")) < 0.2f){
+			ourDrone.velocity = Vector3.ClampMagnitude(ourDrone.velocity, Mathf.Lerp(ourDrone.velocity.magnitude, maxForwardSpeed, Time.deltaTime * 5f));
+		}
+		if(Mathf.Abs(Input.GetAxis("Throttle")) < 0.2f && Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2f){
+			ourDrone.velocity = Vector3.ClampMagnitude(ourDrone.velocity, Mathf.Lerp(ourDrone.velocity.magnitude, maxSidewaySpeed, Time.deltaTime * 5f));
+		}
+		if(Mathf.Abs(Input.GetAxis("Throttle")) < 0.2f && Mathf.Abs(Input.GetAxis("Horizontal")) < 0.2f){
+			ourDrone.velocity = Vector3.SmoothDamp(ourDrone.velocity, Vector3.zero, ref velocityToSmoothDampToZero, slowDownTime);
+		}
+		//=============================================================
+		/*
 		if((W || S) && (A || D)){
 		//if(Mathf.Abs(Input.GetAxis("Vertical")) > 0.2f && Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2f){
 			ourDrone.velocity = Vector3.ClampMagnitude(ourDrone.velocity, Mathf.Lerp(ourDrone.velocity.magnitude, maxForwardSpeed, Time.deltaTime * 5f));
@@ -193,7 +210,9 @@ public class DroneMovementScript: MonoBehaviour{
 		//if(Mathf.Abs(Input.GetAxis("Vertical")) < 0.2f && Mathf.Abs(Input.GetAxis("Horizontal")) < 0.2f){
 			//ourDrone.velocity = Vector3.ClampMagnitude(ourDrone.velocity, Mathf.SmoothDamp(ourDrone.veloc/ity.magnitude,0.0f, ref currentVelocityToSlowDown,0.5f));
 			ourDrone.velocity = Vector3.SmoothDamp(ourDrone.velocity, Vector3.zero, ref velocityToSmoothDampToZero, slowDownTime);
-		}
+		}*/
+		//====================================================================================
+
 	}
 
 	private void DroneSound(){
@@ -216,6 +235,14 @@ public class DroneMovementScript: MonoBehaviour{
 	public float forceDownHover = -200;
 
 	private void MovementUpDown(){
+		if (Input.GetKey (KeyCode.I)) {
+			upForce = forceUpHover;
+		} else if (Input.GetKey (KeyCode.K)) {
+			upForce = forceDownHover;
+		} else if (!Input.GetKey (KeyCode.I) && !Input.GetKey (KeyCode.K)) {
+			upForce = 98.1f;
+		}
+		//=========================================================================
 		/*if((W || S) || (A || D)){
 			idle = false;
 		//if((Mathf.Abs(Input.GetAxis("Vertical")) > 0.2 || Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2)){
@@ -267,7 +294,8 @@ public class DroneMovementScript: MonoBehaviour{
 			idle = true;
 		}*/
 
-		if((W || S) || (A || D)){
+		//=======================================================================================================
+		/*if((W || S) || (A || D)){
 			idle = false;
 			//if((Mathf.Abs(Input.GetAxis("Vertical")) > 0.2 || Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2)){
 			if(Z > 0.2f || Z < -0.2f){
@@ -326,7 +354,9 @@ public class DroneMovementScript: MonoBehaviour{
 			//Debug.Log("Turbo");
 		}else if(!X){
 			movementForwardSpeed = 500.0f;
-		}
+		}*/
+		//===============================================================================
+
 	}
 
 	[Header("Front & Side Movement Forces")]
@@ -336,8 +366,18 @@ public class DroneMovementScript: MonoBehaviour{
 
 	private float tiltAmountSideways = 0;
 	private float tiltVelocitySideways;
+
 	private void MovementLeftRight(){
-		if(A){
+		if(Mathf.Abs(Input.GetAxis("Yaw")) > 0.2f ){
+			ourDrone.AddRelativeForce(Vector3.right * Input.GetAxis("Yaw") * sideMovementAmount);
+			tiltAmountSideways = Mathf.SmoothDamp(tiltAmountSideways,-20 * Input.GetAxis("Yaw"), ref tiltVelocitySideways, 0.1f);
+		}
+		else{
+			tiltAmountSideways = Mathf.SmoothDamp(tiltAmountSideways, 0, ref tiltVelocitySideways, 0.1f);
+		}
+
+		//=======================================================================================
+		/*if(A){
 			ourDrone.AddRelativeForce(Vector3.right * Horizontal_A * sideMovementAmount);
 			tiltAmountSideways = Mathf.SmoothDamp(tiltAmountSideways,-20 * Horizontal_A, ref tiltVelocitySideways, tiltMovementSpeed);
 		}
@@ -348,15 +388,8 @@ public class DroneMovementScript: MonoBehaviour{
 		if(!A && !D){
 			tiltAmountSideways = Mathf.SmoothDamp(tiltAmountSideways, 0, ref tiltVelocitySideways, tiltNoMovementSpeed);
 		}
-		/*
-		if(Mathf.Abs(Input.GetAxis("Horizontal")) > 0.2f ){
-			ourDrone.AddRelativeForce(Vector3.right * Input.GetAxis("Horizontal") * sideMovementAmount);
-			tiltAmountSideways = Mathf.SmoothDamp(tiltAmountSideways,-20 * Input.GetAxis("Horizontal"), ref tiltVelocitySideways, 0.1f);
-		}
-		else{
-			tiltAmountSideways = Mathf.SmoothDamp(tiltAmountSideways, 0, ref tiltVelocitySideways, 0.1f);
-		}
 		*/
+
 	}
 
 	private float wantedYRotation;
@@ -364,8 +397,9 @@ public class DroneMovementScript: MonoBehaviour{
 	[Header("Rotation Amount Mulitplier")]
 	public float rotationAmount = 2.5f;
 	private float rotationYVelocity;
+
 	private void Rotation(){
-		if(joystick_turned_on == false){
+		/*if(joystick_turned_on == false){
 			if(J){
 				//if(Input.GetKey(KeyCode.J)){
 				wantedYRotation -= rotationAmount;
@@ -376,10 +410,15 @@ public class DroneMovementScript: MonoBehaviour{
 			}
 		}
 		else{
-			wantedYRotation += rotationAmount * Input.GetAxis(left_analog_x);
+			wantedYRotation += rotationAmount * Input.GetAxis(right_analog_x);
+		}*/
+		//====================================================================
+		if(Input.GetKey(KeyCode.J)){
+			wantedYRotation -= rotationAmount;
 		}
-
-	
+		if(Input.GetKey(KeyCode.L)){
+			wantedYRotation += rotationAmount;
+		}
 
 		currentYRotation = Mathf.SmoothDamp(currentYRotation, wantedYRotation, ref rotationYVelocity, 0.25f);
 	}
@@ -392,9 +431,9 @@ public class DroneMovementScript: MonoBehaviour{
 	public float tiltMovementSpeed = 0.1f;
 	[Range(0.0f,1.0f)]
 	public float tiltNoMovementSpeed = 0.3f;
-	private void MovementForward(){
 
-		if(W){
+	private void MovementForward(){
+		/*if(W){
 			ourDrone.AddRelativeForce(Vector3.forward * Vertical_W * movementForwardSpeed);
 			tiltAmountForward = Mathf.SmoothDamp(tiltAmountForward, 20 * Vertical_W, ref tiltVelocityForward, tiltMovementSpeed);
 		}
@@ -406,6 +445,11 @@ public class DroneMovementScript: MonoBehaviour{
 		if(!W && !S){
 			tiltAmountForward = Mathf.SmoothDamp(tiltAmountForward, 0, ref tiltVelocityForward, tiltNoMovementSpeed);
 
+		}*/
+		//====================================================================================
+		if(Input.GetAxis("Throttle") != 0){
+			ourDrone.AddRelativeForce (Vector3.forward * Input.GetAxis("Throttle") * movementForwardSpeed);
+			tiltAmountForward = Mathf.SmoothDamp (tiltAmountForward, 20 * Input.GetAxis("Throttle"), ref tiltVelocityForward, 0.1f);
 		}
 
 	}
@@ -446,14 +490,14 @@ public class DroneMovementScript: MonoBehaviour{
 	public KeyCode shootFire = KeyCode.JoystickButton2;
 	private void Joystick_Input_Sensitivity_Calculation(){
 		
-		Vertical_W = Input.GetAxis(right_analog_y) * -1;
-		Vertical_S = Input.GetAxis(right_analog_y) * -1;
+		Vertical_W = Input.GetAxis(left_analog_y);
+		Vertical_S = Input.GetAxis(left_analog_y);
 
-		Horizontal_D = Input.GetAxis(right_analog_x);
-		Horizontal_A = Input.GetAxis(right_analog_x);
+		Horizontal_D = Input.GetAxis(left_analog_x);
+		Horizontal_A = Input.GetAxis(left_analog_x);
 
-		Vertical_K = Input.GetAxis(left_analog_y);
-		Vertical_I = Input.GetAxis(left_analog_y);
+		Vertical_K = Input.GetAxis(right_analog_y);
+		Vertical_I = Input.GetAxis(right_analog_y);
 
 	}
 	private float Vertical_W = 0;

@@ -27,7 +27,7 @@ MonoBehaviour:
   numberOfCars: 2
   playerName: Player
   vehicles:
-  - {fileID: 198844, guid: 5df9cab3cb7c99b40afeccf03e142680, type: 2}
+  - {fileID: 1146075987169644, guid: f2bfa3bc9056e1c4ba7c2b3d9a567d4d, type: 2}
   - {fileID: 198844, guid: 1c5f34fdbeaec104ab7257c5ee3489a1, type: 2}
   vehicleNames:
   - Drone_Racing1
