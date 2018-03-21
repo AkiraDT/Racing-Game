@@ -235,13 +235,42 @@ public class DroneMovementScript: MonoBehaviour{
 	public float forceDownHover = -200;
 
 	private void MovementUpDown(){
+
+		if((Mathf.Abs(Input.GetAxis("Throttle")) > 0.2 || Mathf.Abs(Input.GetAxis("Yaw")) > 0.2)){
+			if(Input.GetKey (KeyCode.I) || Input.GetKey (KeyCode.K)){
+				ourDrone.velocity = ourDrone.velocity;
+			}
+			if(!Input.GetKey(KeyCode.I) && !Input.GetKey(KeyCode.K) && !Input.GetKey(KeyCode.J) && !Input.GetKey(KeyCode.L)){
+				ourDrone.velocity = new Vector3(ourDrone.velocity.x,Mathf.Lerp(ourDrone.velocity.y, 0, Time.deltaTime * 5),ourDrone.velocity.z);
+				upForce = //98.001f;
+					281;
+			}
+			if(!Input.GetKey(KeyCode.I) && !Input.GetKey(KeyCode.K) && (Input.GetKey(KeyCode.J) || Input.GetKey(KeyCode.L))){
+				ourDrone.velocity = new Vector3(ourDrone.velocity.x,Mathf.Lerp(ourDrone.velocity.y, 0, Time.deltaTime * 5),ourDrone.velocity.z);
+				upForce = //98.005f;
+				110;
+			}
+			if (Input.GetKey (KeyCode.J) || Input.GetKey (KeyCode.L)) {
+				upForce = 410;
+			}
+		}
+
+		if((Mathf.Abs(Input.GetAxis("Throttle")) < 0.2 && Mathf.Abs(Input.GetAxis("Yaw")) > 0.2)){
+			upForce = //98.002f;
+				135;
+		}
+
 		if (Input.GetKey (KeyCode.I)) {
 			upForce = forceUpHover;
+			if(Mathf.Abs(Input.GetAxis("Yaw")) > 0.2){
+				upForce = 500;
+			}
 		} else if (Input.GetKey (KeyCode.K)) {
 			upForce = forceDownHover;
-		} else if (!Input.GetKey (KeyCode.I) && !Input.GetKey (KeyCode.K)) {
+		} else if (!Input.GetKey (KeyCode.I) && !Input.GetKey (KeyCode.K) && (Mathf.Abs(Input.GetAxis("Throttle")) < 0.2 && Mathf.Abs(Input.GetAxis("Yaw")) < 0.2)) {
 			upForce = 98.1f;
 		}
+
 		//=========================================================================
 		/*if((W || S) || (A || D)){
 			idle = false;
