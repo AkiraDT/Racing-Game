@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: b35a54978fac17a49a12ba8187f979f6
+ShaderImporter:
+  defaultTextures:
+  - _MainTex: {instanceID: 0}
+  - _VignetteTex: {instanceID: 0}
+  - _ScanLineTex: {instanceID: 0}
+  - _NoiseTex: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

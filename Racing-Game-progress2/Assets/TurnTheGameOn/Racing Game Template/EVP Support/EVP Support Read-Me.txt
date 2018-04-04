@@ -1,0 +1,105 @@
+EVP RGT Integration Version 1.02
+
+RGT includes a support package for users who would like to use EVP as an alternative to the included physics system. This may be considered if you have previously configured EVP vehicles, and would like to use those vehicles instead. The default camera and car prefabs from EVP are used as a reference, these will be used in place of the included camera and car prefabs.
+
+If you don't have EVP it's recommended that you start with the included physics as they will more than meet the needs of most developers who use RGT.
+
+The support package includes RGT script reference changes that will overwrite existing scripts that need modification to be EVP ready, as well as example player and opponent prefabs. Details on how to modify your existing prefab are outlined as well in this file. 
+
+The included EVP example prefabs have not been configured for optimial gameplay, they are close to their default configuration.
+
+Please keep in mind some of the features of RGT are dependant on using the default controller, if these settings or features are not available in EVP they can't be supported, if a similar feature is available it will be used instead; examples include: ---Gears are not supported, no UI display, no IK Driver shifting ---RPMs are not supported, Throttle Input is used as a substitute for UI display. There are more, but I will work to improve the default feature set of the EVP support package through updates.
+
+Note: After importing the EVP Support package, required scripts will added and/or updated to use EVP instead of the default physics scripts. Example vehicle prefabs will also be imported to the EVP Support folder, use these as a starting point for EVP vehicle prefabs or use these as a reference to help configure your own prefabs; these prefabs are assigned in the RGT Settings (Open from Unity Toolbar Window/RGT Settings) as Player and Opponent Vehicles, you can replace them with your own.
+
+
+***Get your project setup***
+
+
+1.  Start with a fresh Racing Game Template project.
+
+2.  Import Edy's Vehicle Physics
+
+3.  Import the EVP Support asset
+
+4.  Add the scenes (2EVP RGT Race) and (M0Open EVP City) to your build settings, these are located in the "TurnTheGameOn\Racing Game Template\Scenes" folder.
+
+
+***If you already have EVP vehicles you can configure them manually***
+
+To configure a pre-existing EVP prefab for use follow these steps:
+
+
+1.  (PLAYER PREFABS) Attach the EVP RGT Vehicle Objects prefab as a child to your EVP car.
+
+1a. (OPPONENT PREFABS) Attach the EVP RGT Opponent Vehicle Objects prefab as a child to your EVP car.
+
+
+
+2.  (PLAYER PREFABS ONLY) Add the RGT_EVPSupport script to your EVP car.
+
+2a. (PLAYER PREFABS ONLY) Assign the attached camera controller from the EVP RGT Vehicle Objects using the inspector on your EVP car.
+
+2b. (PLAYER PREFABS ONLY) Assign the attached Vehicle Controller reference using the inspector on your EVP car.
+
+2c. (PLAYER PREFABS ONLY) Assign the Waypoint Arrow reference that is attached as a child to the Main Camera on the Camera Controller from the EVP RGT Vehicle Objects using the inspector on your EVP car.
+
+2d. (PLAYER PREFABS ONLY) Assign the Waypoint Arrow Camera reference that is attached as a child to the Main Camera on the Camera Controller from the EVP RGT Vehicle Objects using the inspector on your EVP car.
+
+
+
+3.  (PLAYER & OPPONENT PREFABS) Add the RG_AIHelper script to your EVP car.
+
+3a. (PLAYER & OPPONENT PREFABS) Assign the Detection reference that is attached as a child from the EVP RGT Vehicle Objects using the inspector on your EVP car.
+
+3b. (PLAYER & OPPONENT PREFABS) Assign the attached Vehicle Controller reference using the inspector on your EVP car.
+
+3c. (PLAYER & OPPONENT PREFABS) Assign the attached Rigidbody reference using the inspector on your EVP car.
+
+
+4. (PLAYER & OPPONENT PREFABS) Toggle On Rigidbody/ Constraints/ Free Position X and Z.
+
+
+5.  Open the Build Settings and replace the scene (2Races Scene 2) with (2EVP RGT Race) from the scenes folder.
+
+5a. Replace the scene (M0Open World) with (M0Open EVP City)
+
+
+6.  RGT is now EVP ready, you can modify the scenes and cars to your liking.
+
+
+
+
+***Files changed for EVP Support***
+
+
+Alternate or additional scripts used:
+-RG_GarageManager
+-RG_OpenWorldManager
+-RG_SceneManager
+-RG_AIHelper
+-RGT_EVPSupport
+-RG_NetworkManagerHUD
+-RG_NetPlayer
+-RG_SyncData
+-VehicleStandardInput
+
+Alternate Scriptable Objects used:
+-OpponentVehicles
+-RaceData
+-PlayableVehicles
+
+Alternate or additional prefabs used:
+-EVP RGT Opponent Car 1-7
+-EVP RGT Player Car 0-13
+-EVP RGT Vehicle Objects
+-EVP RGT Opponent Vehicle Objects
+
+Alternate scenes used :
+-2EVP RGT Race (new)
+-M0EVP Open World (new)
+-Garage (modified)
+
+Alternate Materials:
+-Opponent car body
+-Player car body

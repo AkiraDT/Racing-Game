@@ -1,0 +1,1 @@
+These cross platform input scripts are almost identical to the standard asset scripts but were moved to this directory to provide better integration with the template. New script files have been created to avoid conflict with other assets that may use this library or standard assets in general. These scripts have also been moved to a new namespace.

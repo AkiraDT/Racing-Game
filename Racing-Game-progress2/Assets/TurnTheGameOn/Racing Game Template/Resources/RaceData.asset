@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f95b595722a1254782ee8d7fef1257d, type: 3}
+  m_Name: RaceData
+  m_EditorClassIdentifier: 
+  numberOfRaces: 5
+  raceNames:
+  - BeachTest
+  - Mountain Lake
+  - Race 2 Name
+  - Race 3 Name
+  - Race 4 Name
+  raceLocked: 0000010101
+  unlockAmount: 00000000a861000050c30000f8240100a0860100
+  unlimitedRewards: 0000000000
+  firstPrize: f8240100b8880000409c0000c8af000050c30000
+  secondPrize: b8880000b0360000803e000050460000204e0000
+  thirdPrize: e02e0000401f000010270000e02e0000b0360000
+  raceNumber: 0
+  raceLaps: 0100000001000000010000000200000001000000
+  lapLimit: 0a0000000a0000000a0000000a0000000a000000
+  raceRewards: f8240100b8880000e02e0000
+  numberOfRacers: 0100000004000000040000000200000001000000
+  racerLimit: 0800000004000000040000000400000004000000
+  vehicleNumber: 0
+  bestTime: 9999.99
+  currency: 2996500
+  purchaseLevelUnlock: 1
+  autoUnlockNextRace: 0
+  lockButtonText: 4c6f636b6564
+  wrongWayDelay: 1.5
+  readyTime:
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  extraLapRewardMultiplier: 0100000001000000010000000100000001000000
+  extraRacerRewardMultiplier: 0000000000000000000000000000000000000000

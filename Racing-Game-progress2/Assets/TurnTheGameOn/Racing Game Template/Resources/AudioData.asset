@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65bb4289784b32146adda135466357cc, type: 3}
+  m_Name: AudioData
+  m_EditorClassIdentifier: 
+  musicSelection: 0
+  music:
+  - {fileID: 8300000, guid: cf730244eea645540895bbe7b2811894, type: 3}
+  menuSelect: {fileID: 8300000, guid: 05a8f0be03244994dba71c221adae4ea, type: 3}
+  menuBack: {fileID: 8300000, guid: 52b28497b1e90344fb5315c55865e981, type: 3}
+  currentAudioTrack: 0
+  numberOfTracks: 1
